@@ -1,0 +1,25 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: "localhost:29092"
+app:
+  kafka:
+    default-topic: "topic"
+resilience4j.circuitbreaker:
+  instances:
+    kafka:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 3
+      slidingWindowType: TIME_BASED
+      minimumNumberOfCalls: 20
+      slowCallRateThreshold: 20
+      slowCallDurationThreshold: 100
+      waitDurationInOpenState: 50s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+resilience4j.timelimiter:
+  instances:
+    kafka:
+      timeoutDuration: 100ms
+      cancelRunningFuture: true
