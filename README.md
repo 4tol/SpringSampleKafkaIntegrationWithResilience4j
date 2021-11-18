@@ -6,7 +6,7 @@
 - Resiliency4j Circuit Breaker: https://resilience4j.readme.io/docs/circuitbreaker
 - Spring for Apache Kafka: https://docs.spring.io/spring-kafka/reference/html/
 
-## Running Docker on local environment.
+## Running Kafka on local Docker environment.
 
 - In console, change directory to ./kafka-docker
 - Run command `docker compose up`
